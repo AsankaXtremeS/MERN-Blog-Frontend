@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react' 
+import Posts from '../components/Posts'
+
 
 const Home = () => {
   return (
-    <div>Home Page Content</div>
+    <Posts />
   )
 }
 
