@@ -16,8 +16,9 @@ const UserProfile = () => {
   return (
     <section className="profile">
       <div className="container profile__container">
-        <Link to={`/myposts/sdfsdf`} className="btn">My Posts</Link>
+        
         <div className="profile__details">
+          <Link to={`/myposts/sdfsdf`} style={{ marginBottom: '1rem' }} className="btn">My Posts</Link>
           <div className="avatar__wrapper">
             <div className="profile__avatar">
               <img src={avatar} alt="" />

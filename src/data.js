@@ -44,6 +44,23 @@ export const  DUMMY_POSTS = [
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolor dolor',
         authorID: 4
     },
+    {
+        id: '2',
+        thumbnail: Thumbnail2,
+        category: 'Science',
+        title: 'This is the title of the very second post on this blog.',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolor dolor',
+        authorID: 1
+    },
+
+    {
+        id: '3',
+        thumbnail: Thumbnail3,
+        category: 'Technology',
+        title: 'This is the title of the very third post on this blog.',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolor dolor',
+        authorID: 2
+    }
 
 ]
 

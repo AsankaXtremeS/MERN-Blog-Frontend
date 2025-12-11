@@ -132,11 +132,11 @@ nav {
 /* ================= FOOTER ================= */
 footer {
     background: var(--color-gray-900);
-    margin-top: 6rem;
-    padding-top: 6rem;
+    margin-top: 1rem;
+   
 }
 
-.footer__categories {
+/* .footer__categories {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,7 +156,7 @@ footer {
 .footer__categories a:hover {
     background: var(--color-white);
     color: var(--color-gray-900);
-}
+} */
 
 .footer__copyright {
     color: var(--color-white);
@@ -244,6 +244,7 @@ footer {
 }
 
 .post {
+    margin-top: 0px;
     background: var(--color-white);
     padding: 1rem;
     border-radius: var(--radius-4);
@@ -383,7 +384,7 @@ input, select, textarea {
 
 /*====================Authors======================*/
 .authors {
-    min-height: calc(100vh - 28rem); /* Ensures footer stays at bottom */
+    min-height: 70.6vh; /* Ensures footer stays at bottom */
 }
 
 .authors__container {
@@ -420,66 +421,92 @@ input, select, textarea {
 
 /* ================= PROFILE ================= */
 .profile__container {
-    display: grid;
-    place-items: center;
-    text-align: center;
+    margin-top: -30px;
+    margin-bottom: -18px;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    max-width: 1200px;
+    padding: 2rem;
+    
 }
 
 .profile__details {
-    width: 100%;
+    flex: 0 0 300px;
+    text-align: center;
+    padding: 2rem;
+    border-radius: var(--radius-3);
 }
 
 .avatar__wrapper {
-    width: 15rem;
-    aspect-ratio: 1/1;
+    width: 150px;
+    height: 150px;
     position: relative;
-    margin-inline: auto;
-    margin-top: 1rem;
+    margin: 0 auto 1.5rem;
 }
 
 .profile__avatar {
+    width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1rem solid var(--color-white);
     overflow: hidden;
+    transition: var(--transition);
+}
+
+.profile__avatar:hover {
+    transform: scale(1.05);
 }
 
 .avatar__form {
-    height: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .avatar__form input {
-    visibility: hidden;
+    display: none;
 }
 
 .avatar__form label, .profile__avatar-btn {
     background: var(--color-gray-900);
     color: var(--color-white);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     position: absolute;
-    right: 2rem;
-    bottom: 1.4rem;
-    width: 3rem;
-    height: 3rem;
-    display: grid;
-    place-items: center;
+    right: 0;
+    bottom: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.avatar__form label:hover, .profile__avatar-btn:hover {
+    background: var(--color-primary);
+    transform: scale(1.1);
 }
 
 .profile__avatar-btn {
-    cursor: pointer;
-    padding: 0;
     background: var(--color-primary);
 }
 
 .profile__details h1 {
-    margin-top: 1.5rem;
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--color-gray-900);
+    font-weight: 600;
 }
 
 .form.profile__form {
-    margin-top: 3rem;
-    margin-inline: auto;
-    width: var(--form-width);
+    flex: 1;
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--radius-3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ================= DASHBOARD ================= */
@@ -660,6 +687,24 @@ input[type="file"]::file-selector-button:hover {
     .register, .login, .create-post, .form.profile__form {
         width: 100%;
     }
+
+    .profile__container {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .profile__details {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .avatar__wrapper {
+        width: 120px;
+        height: 120px;
+    }
     
     .dashboard__post {
         flex-direction: column;
@@ -729,5 +774,20 @@ input[type="file"]::file-selector-button:hover {
     /* Forms */
     .form.profile__form, .create-post, .register, .login, .post-detail {
         width: 60%;
+    }
+
+    .profile__container {
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .profile__details {
+        flex: 0 0 250px;
+        padding: 1.5rem;
+    }
+
+    .avatar__wrapper {
+        width: 130px;
+        height: 130px;
     }
 }

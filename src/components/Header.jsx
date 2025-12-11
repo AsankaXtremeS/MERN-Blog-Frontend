@@ -28,8 +28,7 @@ const Header = () => {
         <Link to="/" className="nav__logo" onClick={closeNavHandler}>
           <img src={Logo} alt="Navbar Logo" />
         </Link>
-        {isNavShowing && (
-          <ul className="ul nav__menu">
+        <ul className={`nav__menu ${isNavShowing ? 'show' : ''}`}>
             <li>
               <Link to="/profile/45" onClick={closeNavHandler}>
                 Asanka Sampath
@@ -51,7 +50,6 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-        )}
         <button className="nav__toggle-btn" onClick={toggleNavHandler}>
           {isNavShowing ? <AiOutlineClose /> : <FaBars />}
         </button>
