@@ -1,3 +1,100 @@
+@media (max-width: 430px) {
+    .post__container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        padding: 0 0.5rem;
+    }
+    .post {
+        margin: 0 auto 1.2rem auto;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        border-radius: 1.2rem;
+        max-width: 98vw;
+    }
+    .post__thumbnail {
+        height: 180px;
+        border-radius: 1.2rem 1.2rem 0 0;
+    }
+    .post__content {
+        padding: 0.5rem 0.2rem 0.8rem 0.2rem;
+    }
+}
+/* --- Navbar dropdown and burger improvements --- */
+@media (max-width: 800px) {
+    .nav__menu {
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        background: var(--color-white);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        border-radius: 0 0 var(--radius-2) var(--radius-2);
+        width: 100vw;
+        left: 0;
+        right: 0;
+        position: absolute;
+        top: 5rem;
+        z-index: 10;
+    }
+    .nav__menu.show {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .nav__toggle-btn {
+        display: inline-block;
+        background: transparent;
+        font-size: 2rem;
+        border: none;
+        color: var(--color-gray-900);
+        z-index: 20;
+    }
+}
+/* Responsive styles for iPhone 14 Pro Max and similar devices */
+@media (max-width: 430px) {
+    body {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        width: 100vw;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    header, .header, .footer, .layout {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .form, .register__form, .login__form {
+        width: 100%;
+        min-width: 0;
+        padding: 10px;
+    }
+
+    .post-item, .post-detail, .dashboard, .user-profile {
+        padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-size: 1.2em;
+        word-break: break-word;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    nav, .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {

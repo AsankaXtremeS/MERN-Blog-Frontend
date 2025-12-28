@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-
-const {userContext}  from
+import { UserContext } from '../context/userContext';
 
 const Login = () => {
     const [userData,setUserData] = useState({
         email: '',
         password: ''
     })
+
+    const [error,setError] = useState('');
+    const navigate = useNavigate();
+
+    const { setCurrentUser } = useContext(UserContext);
+
+
     const changeInputHandler = (e) => {
         setUserData(prevState => {
           return {
@@ -18,12 +24,32 @@ const Login = () => {
           }
         })
     }
+
+    const loginUser = async (e) => {
+        e.preventDefault();
+        setError('');
+
+        try {
+           const response = await axios.post(
+            `${process.env.REACT_APP_API_BASE_URL}/users/login`,
+            userData
+           );
+
+           const user = await response.data;
+           setCurrentUser(user);
+           navigate('/');
+        } catch (err) {
+            setError(err.response.data.message || 'Something went wrong');
+        }
+    }
+
+
   return (
     <section className="login">
       <div className="container">
         <h2>Login</h2>
-        <form action="" className="form login__form">
-          <p className="form__error-message">This is a Error message</p>
+        <form action="" className="form login__form" onSubmit={loginUser}>
+          {error && <p className="form__error-message">{error}</p>}
           <input type="text" placeholder='Email' name="email" value={userData.email} onChange={changeInputHandler}/>
           <input type="password" placeholder='Password' name="password" value={userData.password} onChange={changeInputHandler}/>
           <button type="submit" className="btn primary">Login</button>
